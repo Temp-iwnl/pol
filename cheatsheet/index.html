@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IT/STD Datenschutz & Grundschutz – A-Level Cheatsheet</title>
+  <meta name="description" content="Kompaktes Lern-Cheatsheet für DSGVO, BDSG, IT-Schutzziele, Datenschutzbeauftragter, BSI-Grundschutz und Strukturanalyse." />
+  <style>
+    :root{
+      --bg:#0f1117; --panel:#171a23; --panel2:#202432; --text:#f4f6fb; --muted:#aeb6c8;
+      --line:#30364a; --accent:#ffd65c; --accent2:#9b7cff; --good:#6ee7a8; --bad:#ff7f93; --blue:#71c7ff;
+      --shadow: 0 16px 50px rgba(0,0,0,.35); --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;background:radial-gradient(circle at top left,#222840 0,#0f1117 42%,#090a0f 100%);color:var(--text);line-height:1.5}
+    a{color:var(--accent)}
+    .wrap{max-width:1220px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:10;background:rgba(15,17,23,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1220px;margin:auto;padding:12px 24px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .brand{font-weight:900;letter-spacing:.2px}.brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a,.btn{font-size:13px;text-decoration:none;color:var(--text);border:1px solid var(--line);padding:8px 11px;border-radius:999px;background:#151924}.navlinks a:hover,.btn:hover{border-color:var(--accent);color:var(--accent)}
+    .hero{padding:32px 0 20px;display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:stretch}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    h1{font-size:clamp(34px,6vw,72px);line-height:.95;margin:0 0 14px;font-weight:950;letter-spacing:-2px} h1 span{color:var(--accent)}
+    h2{font-size:28px;margin:0 0 16px;letter-spacing:-.5px} h3{font-size:20px;margin:0 0 10px;color:var(--accent)} h4{margin:10px 0 4px;color:#fff}
+    p{margin:0 0 10px;color:var(--muted)}
+    .bigline{font-size:20px;color:#fff;font-weight:700}.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.tag{border:1px solid var(--line);background:#141824;border-radius:999px;padding:6px 10px;font-size:13px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    section{scroll-margin-top:95px;margin:18px 0}.mini{font-size:13px;color:var(--muted)}
+    table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:14px;margin:8px 0;background:#121620}th,td{border:1px solid var(--line);padding:10px;vertical-align:top}th{background:#23283a;color:#fff;text-align:left}td{color:#e8ecf7}.nowrap{white-space:nowrap}
+    .pill{display:inline-block;border-radius:999px;padding:3px 8px;font-size:12px;font-weight:800;margin:2px 3px 2px 0}.green{background:rgba(110,231,168,.15);color:var(--good);border:1px solid rgba(110,231,168,.35)}.red{background:rgba(255,127,147,.15);color:var(--bad);border:1px solid rgba(255,127,147,.35)}.yellow{background:rgba(255,214,92,.15);color:var(--accent);border:1px solid rgba(255,214,92,.35)}.blue{background:rgba(113,199,255,.15);color:var(--blue);border:1px solid rgba(113,199,255,.35)}.purple{background:rgba(155,124,255,.16);color:#c9bbff;border:1px solid rgba(155,124,255,.35)}
+    .formula{font-size:22px;font-weight:900;background:#0d1018;border:1px dashed var(--line);padding:14px;border-radius:14px;color:#fff}.callout{border-left:5px solid var(--accent);background:#151925;padding:14px;border-radius:12px;color:#f7f0ce}.warn{border-left-color:var(--bad)}.ok{border-left-color:var(--good)}
+    .quick{display:grid;gap:10px}.quick div{padding:12px;background:#121620;border:1px solid var(--line);border-radius:12px}.quick b{color:#fff}
+    .flash{cursor:pointer;min-height:116px;display:flex;flex-direction:column;justify-content:center;transition:.2s}.flash:hover{transform:translateY(-2px);border-color:var(--accent)}.answer{display:none}.flash.open .answer{display:block}.flash.open .question{display:none}
+    input[type=search]{width:100%;padding:13px 15px;border-radius:14px;border:1px solid var(--line);background:#10131c;color:var(--text);font-size:16px;margin:0 0 12px}.hidden{display:none!important}
+    .footer{color:var(--muted);font-size:13px;text-align:center;padding:28px 0 50px}
+    .printbar{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:20}.printbar button{border:none;background:var(--accent);color:#111;font-weight:900;border-radius:999px;padding:12px 15px;box-shadow:var(--shadow);cursor:pointer}
+    @media(max-width:900px){.hero,.grid,.grid2,.grid4{grid-template-columns:1fr}.nav{align-items:flex-start}.navlinks{max-height:90px;overflow:auto}h1{font-size:44px}}
+    @media print{body{background:white;color:black}.wrap{max-width:none;padding:10px}header,.printbar,.navlinks,.tagrow{display:none}.card{box-shadow:none;border:1px solid #aaa;background:white;color:black;break-inside:avoid;padding:12px;margin:8px 0}h1,h2,h3,p,td,th,.mini{color:black}section{margin:8px 0}table{font-size:11px}h1{font-size:28px}.hero,.grid,.grid2,.grid4{display:block}.pill{border:1px solid #777;color:black;background:white}.callout,.formula{background:white;color:black;border-color:#777}.footer{display:none}}
+  
+    /* --- Project update: cross links, BSI house graphic, embedded cheatsheet --- */
+    .switch-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .switch-btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:14px;text-decoration:none;font-weight:800;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--text);transition:.18s ease}
+    .switch-btn:hover{transform:translateY(-1px);border-color:var(--yellow, var(--accent));color:var(--yellow, var(--accent))}
+    .switch-btn.primary{background:linear-gradient(135deg,var(--purple, var(--accent2)),var(--blue));color:#11151f;border-color:transparent}
+    .house-card{overflow:hidden}
+    .house-note{color:var(--muted);margin:0 0 14px}
+    .bsi-house-wrap{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:18px;align-items:center}
+    .bsi-house{position:relative;max-width:720px;margin:6px auto 4px;padding-top:92px}
+    .bsi-roof-outer,.bsi-roof-inner{position:absolute;left:50%;transform:translateX(-50%) skewX(-26deg);transform-origin:bottom center;border-radius:8px 8px 0 0}
+    .bsi-roof-outer{top:0;width:84%;height:88px;background:repeating-linear-gradient(45deg,#7fc7ff 0 3px,#a9ddff 3px 7px);border:3px solid rgba(45,89,140,.65)}
+    .bsi-roof-inner{top:24px;width:58%;height:58px;background:linear-gradient(180deg,#295eaa,#18447d);border:3px solid rgba(23,47,87,.9)}
+    .bsi-roof-label{position:absolute;left:50%;top:43px;transform:translateX(-50%);font-weight:900;color:#fff;font-size:22px;letter-spacing:.6px}
+    .house-shell{border:2px solid rgba(70,116,170,.5);border-top:none;border-radius:0 0 16px 16px;overflow:hidden;background:rgba(255,255,255,.02)}
+    .house-level{position:relative;padding:18px;min-height:90px;border-top:1px solid rgba(60,90,130,.34)}
+    .house-level:first-child{border-top:none}
+    .house-level-title{position:absolute;right:16px;top:14px;font-size:clamp(16px,2vw,26px);font-weight:600;color:#1b2430;opacity:.88}
+    .house-level.process{background:linear-gradient(180deg,#dceeff,#cae4f7)}
+    .house-level.system{background-color:#fff6d7;background-image:radial-gradient(#9ab1cf 1.05px, transparent 1.05px);background-size:14px 14px}
+    .house-level.der{background:linear-gradient(180deg,#1d4f92,#123562);padding:14px 18px;min-height:56px}
+    .chip-row{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2}
+    .bsi-chip{min-width:62px;text-align:center;padding:7px 12px;border-radius:6px;background:#fff;border:1px solid rgba(63,88,119,.3);color:#334;font-weight:900;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+    .bsi-chip.dark{background:transparent;border:none;color:#fff;font-size:30px;letter-spacing:.7px;padding:0;box-shadow:none}
+    .house-side-notes{display:grid;gap:10px}
+    .note-pill{padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--text)}
+    .note-pill b{color:#fff}
+    .embed-frame{width:100%;min-height:760px;border:1px solid var(--line);border-radius:22px;background:#0f1117;box-shadow:var(--shadow);margin-top:16px}
+    @media(max-width:980px){.bsi-house-wrap{grid-template-columns:1fr}.bsi-roof-label{font-size:18px;top:48px}.house-level-title{position:static;display:block;margin:0 0 10px;font-size:18px}.bsi-house{padding-top:78px}.embed-frame{min-height:650px}}
+    @media print{.switch-links,.embed-frame{display:none!important}.house-card,.note-pill{background:white!important}.bsi-roof-outer{border-color:#7aa4d6}.bsi-roof-inner{border-color:#315d95}.house-shell{border-color:#8ba8ca}.house-level-title{color:#333}}
+
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">IT/STD <span>A-Level Cheatsheet</span></div>
+    <nav class="navlinks">
+      <a href="#schutzziele">Schutzziele</a><a href="#dsgvo">DSGVO</a><a href="#dsb">DSB</a><a href="#bsi">BSI</a><a href="#bsihaus">BSI-Haus</a><a href="#struktur">Struktur</a><a href="#gefahren">Gefahren</a><a href="#templates">Templates</a><a href="#quiz">Quiz</a>
+    <a href="../index.html">Original</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="card">
+      <h1>Datenschutz & IT-Grundschutz <span>Cheatsheet</span></h1>
+      <p class="bigline">Alles, was du für die Klassenarbeit schnell erkennen und sauber formulieren musst.</p>
+      <div class="tagrow"><span class="tag">DSGVO/BDSG</span><span class="tag">IT-Schutzziele</span><span class="tag">DSB</span><span class="tag">BSI-Bausteine</span><span class="tag">Strukturanalyse</span></div>
+    </div>
+    <div class="card quick">
+      <h2>Merksatz</h2>
+      <div><b>Datenschutz</b> schützt Menschen vor falscher/unerlaubter Nutzung ihrer personenbezogenen Daten.</div>
+      <div><b>Datensicherheit</b> schützt Daten/Systeme technisch und organisatorisch.</div>
+      <div><b>BSI-Grundschutz</b> schützt Geschäftsprozesse, Informationen, Systeme, Netze und Räume systematisch.</div>
+    </div>
+  
+      <div class="switch-links">
+        <a class="switch-btn primary" href="index.html">🧾 Cheatsheet</a>
+        <a class="switch-btn" href="../index.html">🏠 Zur Original-Website</a>
+      </div>
+</section>
+
+  <section id="schutzziele" class="card">
+    <h2>1. IT-Schutzziele: immer zuerst diese 3 checken</h2>
+    <table>
+      <thead><tr><th>Schutzziel</th><th>Ein-Satz-Definition</th><th>Typische Klausur-Signale</th><th>Beispiel</th></tr></thead>
+      <tbody>
+        <tr><td><span class="pill blue">Vertraulichkeit</span></td><td>Nur berechtigte Personen dürfen Daten sehen.</td><td>Unbefugter liest mit, Phishing, falscher Empfänger, Daten werden gestohlen, unverschlüsselte Mail/WLAN.</td><td>Fremde lesen Kundendaten mit.</td></tr>
+        <tr><td><span class="pill yellow">Integrität</span></td><td>Daten müssen richtig, vollständig und unverändert sein.</td><td>Zahlen geändert, Datei manipuliert, falsche Kundenzuordnung, versehentlich verändert.</td><td>Kundendaten werden falsch geändert.</td></tr>
+        <tr><td><span class="pill green">Verfügbarkeit</span></td><td>Daten und Systeme müssen erreichbar und nutzbar sein.</td><td>DDoS, Serverausfall, Stromausfall, Datenverlust, System nicht erreichbar.</td><td>Server fällt aus, niemand kann arbeiten.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout ok"><b>Prüfungstrick:</b> „sehen“ = Vertraulichkeit · „ändern/falsch“ = Integrität · „nicht erreichbar/weg“ = Verfügbarkeit.</div>
+  </section>
+
+  <section id="dsgvo" class="card">
+    <h2>2. DSGVO/BDSG: Artikel erkennen</h2>
+    <div class="grid2">
+      <div>
+        <h3>Grundlogik</h3>
+        <p><b>Verbot mit Erlaubnisvorbehalt:</b> Personenbezogene Daten dürfen erst verarbeitet werden, wenn es eine Rechtsgrundlage gibt.</p>
+        <p><b>Personenbezogene Daten:</b> alle Infos, die direkt oder indirekt zu einer natürlichen Person gehören, z. B. Name, Adresse, Personalnummer, IP-Adresse, Gesundheitsdaten.</p>
+        <p><b>DSGVO vs. BDSG:</b> DSGVO gilt EU-weit und hat Vorrang. BDSG ergänzt national, z. B. bei Beschäftigtendaten und Datenschutzbeauftragten.</p>
+      </div>
+      <div>
+        <h3>Top-Artikel Tabelle</h3>
+        <table>
+          <tr><th>Artikel</th><th>Woran erkennst du ihn?</th></tr>
+          <tr><td>Art. 5</td><td>Grundsätze: Zweckbindung, Datenminimierung, Richtigkeit, Speicherbegrenzung, Sicherheit.</td></tr>
+          <tr><td>Art. 6</td><td>Rechtsgrundlage fehlt / keine Erlaubnis / keine gesetzliche Grundlage.</td></tr>
+          <tr><td>Art. 7</td><td>Einwilligung fehlt, nicht freiwillig, nicht nachweisbar oder Widerruf fehlt.</td></tr>
+          <tr><td>Art. 10</td><td>Daten über Straftaten / strafrechtliche Verurteilungen.</td></tr>
+          <tr><td>Art. 13</td><td>Betroffener wurde bei Datenerhebung nicht informiert.</td></tr>
+          <tr><td>Art. 15</td><td>Auskunft: „Welche Daten habt ihr über mich?“</td></tr>
+          <tr><td>Art. 16</td><td>Berichtigung falscher Daten.</td></tr>
+          <tr><td>Art. 17</td><td>Löschung / Recht auf Vergessenwerden.</td></tr>
+          <tr><td>Art. 18</td><td>Einschränkung der Verarbeitung.</td></tr>
+          <tr><td>Art. 20</td><td>Datenübertragbarkeit in gängigem Format.</td></tr>
+          <tr><td>Art. 32</td><td>Sicherheit der Verarbeitung: TOMs, Verschlüsselung, Schutz vor Verlust.</td></tr>
+        </table>
+      </div>
+    </div>
+    <h3>Art. 6 Rechtsgrundlagen — was erlaubt Verarbeitung?</h3>
+    <div class="grid4">
+      <div class="card"><span class="pill green">Einwilligung</span><p>Person stimmt freiwillig und informiert zu.</p></div>
+      <div class="card"><span class="pill green">Vertrag</span><p>Daten sind nötig, um Vertrag zu erfüllen.</p></div>
+      <div class="card"><span class="pill green">Gesetzliche Pflicht</span><p>Gesetz verlangt die Verarbeitung.</p></div>
+      <div class="card"><span class="pill green">Berechtigtes Interesse</span><p>Interesse überwiegt, Rechte der Person werden beachtet.</p></div>
+    </div>
+    <div class="callout ok"><b>Art. 32 Prüfungsblock:</b> Sicherheit der Verarbeitung = technische und organisatorische Maßnahmen, z. B. Verschlüsselung, Zugriffsschutz, Backup, VPN, Updates, Protokollierung. Signalwörter: unverschlüsselt, Datenleck, Serverausfall, ungesichertes WLAN, jeder kann zugreifen.</div>
+
+  </section>
+
+  <section id="dsb" class="card">
+    <h2>3. Datenschutzbeauftragter</h2>
+    <div class="grid2">
+      <div>
+        <h3>Aufgaben nach Art. 39 DSGVO</h3>
+        <table>
+          <tr><td>1</td><td>Unterrichtung und Beratung der Geschäftsführung und Beschäftigten.</td></tr>
+          <tr><td>2</td><td>Überwachung der Einhaltung von DSGVO/BDSG.</td></tr>
+          <tr><td>3</td><td>Sensibilisierung und Schulung der Mitarbeitenden.</td></tr>
+          <tr><td>4</td><td>Beratung bei Datenschutz-Folgenabschätzung.</td></tr>
+          <tr><td>5</td><td>Zusammenarbeit mit der Aufsichtsbehörde und Anlaufstelle sein.</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Wichtig für Fallfragen</h3>
+        <p><b>Verantwortung bleibt bei der Geschäftsführung.</b> Der DSB berät und kontrolliert, aber er übernimmt nicht die rechtliche Gesamtverantwortung.</p>
+        <div class="callout warn"><b>Klausur-Hinweis:</b> In alten Unterrichtsblättern wird oft mit „10 Personen ständig automatisiert“ gearbeitet. In neueren Quellen steht häufig „20 Personen“. Für deine Klausur immer die Regel aus Unterricht/Arbeitsblatt verwenden.</div>
+        <table>
+          <tr><th>Fall</th><th>Typische Antwort</th></tr>
+          <tr><td>Viele Beschäftigte verarbeiten digital personenbezogene Daten</td><td>DSB eher erforderlich.</td></tr>
+          <tr><td>Gesundheitsdaten, Strafdaten, sexuelle Orientierung</td><td>DSB sehr wahrscheinlich erforderlich wegen sensibler Daten.</td></tr>
+          <tr><td>Nur wenige Personen, normale Daten, Papier, kein Risiko</td><td>DSB eher nicht erforderlich.</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+  <section id="bsi" class="card">
+    <h2>5. BSI IT-Grundschutz</h2>
+    <div class="grid2">
+      <div>
+        <h3>Sicherheitsprozess Reihenfolge</h3>
+        <div class="formula">1 Initiierung → 2 Strukturanalyse & Organisation → 3 Sicherheitskonzeption → 4 Umsetzung → 5 Verbesserung</div>
+        <p class="mini">Zyklus: PDCA = Plan, Do, Check, Act.</p>
+        <h3>Rollen</h3>
+        <table>
+          <tr><th>Rolle</th><th>Aufgabe</th></tr>
+          <tr><td>Geschäftsführung</td><td>Trägt Gesamtverantwortung. Kann Verantwortung nicht komplett abgeben.</td></tr>
+          <tr><td>ISB</td><td>Koordiniert Sicherheitsprozess, berät, erstellt Leitlinie, Risikoanalyse, überwacht Maßnahmen.</td></tr>
+          <tr><td>Admin</td><td>Setzt technisch um. Sollte sich nicht selbst als ISB kontrollieren.</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>Bausteine schnell erkennen</h3>
+        <table>
+          <tr><th>Kürzel</th><th>Bedeutung</th><th>Klausur-Signal</th></tr>
+          <tr><td>ISMS</td><td>Sicherheitsmanagement</td><td>Leitlinie, Sicherheitsprozess, Managementsystem.</td></tr>
+          <tr><td>ORP</td><td>Organisation & Personal</td><td>Schulung, Rollen, Berechtigungen, neue Mitarbeitende.</td></tr>
+          <tr><td>CON</td><td>Konzepte</td><td>Backup-Konzept, Datenschutzkonzept, Kryptokonzept.</td></tr>
+          <tr><td>OPS</td><td>Betrieb</td><td>Protokollierung, Administration, Patch, täglicher Betrieb.</td></tr>
+          <tr><td>APP</td><td>Anwendungen</td><td>Office, Webshop, Praxissoftware, Ticketsoftware.</td></tr>
+          <tr><td>SYS</td><td>IT-Systeme</td><td>Server, PCs, Laptops, Tablets.</td></tr>
+          <tr><td>NET</td><td>Netze</td><td>VPN, Firewall, Router, Switch, WLAN.</td></tr>
+          <tr><td>INF</td><td>Infrastruktur</td><td>Gebäude, Serverraum, Zutritt, Brand/Wasser.</td></tr>
+          <tr><td>IND</td><td>Industrielle IT</td><td>Fertigungsstraße, Sensoren, Steuerungsanlage.</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="bsihaus" class="card house-card">
+    <h2>5.5 BSI-Hausgrafik: Bausteine auf einen Blick</h2>
+    <p class="house-note">Merke: <b>ISMS</b> als Dach, darunter <b>ORP/CON/OPS</b>, dann <b>APP/SYS/IND/NET/INF</b>, unten <b>DER</b>.</p>
+    <div class="bsi-house-wrap">
+      <div class="bsi-house" aria-label="BSI-Hausgrafik mit ISMS, Prozess-Bausteinen, System-Bausteinen und DER">
+        <div class="bsi-roof-outer"></div><div class="bsi-roof-inner"></div><div class="bsi-roof-label">ISMS</div>
+        <div class="house-shell">
+          <div class="house-level process"><div class="house-level-title">Prozess-Bausteine</div><div class="chip-row"><span class="bsi-chip">ORP</span><span class="bsi-chip">CON</span><span class="bsi-chip">OPS</span></div></div>
+          <div class="house-level system"><div class="house-level-title">System-Bausteine</div><div class="chip-row"><span class="bsi-chip">APP</span><span class="bsi-chip">SYS</span><span class="bsi-chip">IND</span><span class="bsi-chip">NET</span><span class="bsi-chip">INF</span></div></div>
+          <div class="house-level der"><div class="chip-row"><span class="bsi-chip dark">DER</span></div></div>
+        </div>
+      </div>
+      <div class="house-side-notes">
+        <div class="note-pill"><b>ISMS</b> = Management.</div>
+        <div class="note-pill"><b>ORP/CON/OPS</b> = Organisation, Konzepte, Betrieb.</div>
+        <div class="note-pill"><b>APP/SYS/IND/NET/INF</b> = Anwendungen bis Infrastruktur.</div>
+        <div class="note-pill"><b>DER</b> = Vorfälle erkennen und reagieren.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="struktur" class="card">
+    <h2>6. Strukturanalyse: 5 Objektarten</h2>
+    <div class="callout"><b>Leitfragen:</b> Was wird gemacht? Welche Software? Welche Geräte? Wie verbunden? Wo steht die Technik?</div>
+    <table>
+      <thead><tr><th>Objektart</th><th>Was kommt rein?</th><th>Beispiel</th></tr></thead>
+      <tbody>
+        <tr><td>Geschäftsprozess / Informationen</td><td>Fachaufgabe, Ablauf, wichtige Daten.</td><td>Terminvergabe, Patientenverwaltung, Eingangsrechnung, Ticketbearbeitung.</td></tr>
+        <tr><td>Anwendungen</td><td>Software/Systeme, mit denen gearbeitet wird.</td><td>Praxissoftware, Buchhaltungssoftware, Onlineshop, Ticket-Master Pro.</td></tr>
+        <tr><td>IT-Systeme</td><td>Hardware/Geräte.</td><td>Server, Desktop-PC, Notebook, Tablet, Webserver.</td></tr>
+        <tr><td>Netze / Kommunikation</td><td>Verbindungen und Netzwerkkomponenten.</td><td>LAN, WLAN, VPN, TLS-Mailserver, Internet, Firewall.</td></tr>
+        <tr><td>Räume / Infrastruktur</td><td>Orte und physische Umgebung.</td><td>Serverraum, Büro, Praxisraum, Homeoffice, Hosting-Umgebung.</td></tr>
+      </tbody>
+    </table>
+    <h3>Mini-Beispiel MediCare</h3>
+    <table>
+      <tr><td>Prozess</td><td>Termin anfragen → Patient anlegen → Akte pflegen → Abrechnung.</td></tr>
+      <tr><td>Anwendungen</td><td>Praxisverwaltungssoftware, Online-Terminbuchung, Abrechnungssoftware.</td></tr>
+      <tr><td>IT-Systeme</td><td>Empfangs-PC, Arzt-Notebook, Server mit Patientendatenbank.</td></tr>
+      <tr><td>Netze</td><td>VPN fürs Homeoffice, gesichertes LAN, TLS-Mail.</td></tr>
+      <tr><td>Räume</td><td>Empfang, Behandlungszimmer, Serverstandort, Homeoffice.</td></tr>
+    </table>
+  </section>
+
+  <section id="gefahren" class="card">
+    <h2>7. Gefahrenquellen & Maßnahmen</h2>
+    <table>
+      <thead><tr><th>Gefährdungsklasse</th><th>Beispiele</th><th>Maßnahmen</th></tr></thead>
+      <tbody>
+        <tr><td>Höhere Gewalt</td><td>Blitz, Feuer, Wasser, Sturm.</td><td><span class="pill blue">technisch</span> USV, Überspannungsschutz, Backup · <span class="pill yellow">baulich</span> Brandschutz, Wasser-/Rauchmelder.</td></tr>
+        <tr><td>Organisatorische Mängel</td><td>Keine Schulung, keine Rechtevergabe, kein Backup-Konzept.</td><td><span class="pill green">organisatorisch</span> Richtlinien, Schulungen, Zuständigkeiten, Notfallplan.</td></tr>
+        <tr><td>Menschliches Fehlverhalten</td><td>Phishing-Link, Fehlbedienung, falsche Mailadresse.</td><td>Awareness-Schulung, Vier-Augen-Prinzip, Spamfilter, MFA, klare Prozesse.</td></tr>
+        <tr><td>Technisches Versagen</td><td>Serverausfall, Softwarefehler, defekte Festplatte.</td><td>Monitoring, Redundanz, Updates, Backups, Ersatzhardware.</td></tr>
+        <tr><td>Vorsätzliche Handlung</td><td>Hacker, Malware, Diebstahl, Sabotage.</td><td>Firewall, Antivirus/EDR, Rechtekonzept, Zutrittskontrolle, Protokollierung.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="templates" class="card">
+    <h2>8. Copy-Paste Antworttemplates</h2>
+    <div class="grid2">
+      <div class="quick">
+        <div><b>Schutzziel:</b><br>Verletzt ist <u>____</u>, weil <u>____</u>. Dadurch sind die Daten/Systeme nicht mehr <u>vertraulich/richtig/verfügbar</u>.</div>
+        <div><b>DSGVO-Artikel:</b><br>Es handelt sich um Art. <u>__ DSGVO</u>, weil <u>____</u>. Das Unternehmen hätte <u>____</u> sicherstellen müssen.</div>
+        <div><b>DSB:</b><br>Ein Datenschutzbeauftragter ist <u>erforderlich/nicht erforderlich</u>, weil <u>____</u>. Besonders relevant ist <u>Anzahl Personen / sensible Daten / automatisierte Verarbeitung</u>.</div>
+      </div>
+      <div class="quick">
+        <div><b>BSI-Baustein:</b><br>Passend ist <u>___</u>, weil es um <u>Software/System/Netz/Raum/Organisation/Konzept/Betrieb</u> geht.</div>
+        <div><b>Strukturanalyse:</b><br>Prozess: ___ · Anwendung: ___ · IT-Systeme: ___ · Netze: ___ · Raum: ___.</div>
+        <div><b>Maßnahme:</b><br>Geeignet ist eine <u>technische/bauliche/organisatorische</u> Maßnahme, nämlich <u>____</u>, weil dadurch <u>____</u> verhindert wird.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" class="card">
+    <h2>9. Schnell-Quiz / Flashcards</h2>
+    <input id="search" type="search" placeholder="Suche z. B. Art. 17, VPN, Integrität, Zutritt..." />
+    <div class="grid" id="cards">
+      <div class="card flash" data-key="vertraulichkeit phishing"><div class="question"><b>Phishing klaut Login-Daten. Welches Schutzziel?</b></div><div class="answer">Vertraulichkeit, weil Unbefugte Zugriff auf sensible Daten erhalten.</div></div>
+      <div class="card flash" data-key="integrität manipuliert geändert"><div class="question"><b>Zahlen in Finanzdaten wurden geändert. Schutzziel?</b></div><div class="answer">Integrität, weil Daten nicht mehr richtig/unverändert sind.</div></div>
+      <div class="card flash" data-key="verfügbarkeit ddos server"><div class="question"><b>DDoS: Shop nicht erreichbar. Schutzziel?</b></div><div class="answer">Verfügbarkeit, weil System/Daten nicht nutzbar sind.</div></div>
+      <div class="card flash" data-key="art 6 rechtsgrundlage"><div class="question"><b>Daten ohne Rechtsgrundlage verarbeitet. Artikel?</b></div><div class="answer">Art. 6 DSGVO.</div></div>
+      <div class="card flash" data-key="art 13 information"><div class="question"><b>Kunde wurde bei Datenerhebung nicht informiert. Artikel?</b></div><div class="answer">Art. 13 DSGVO.</div></div>
+      <div class="card flash" data-key="art 15 auskunft"><div class="question"><b>Kunde will wissen, welche Daten gespeichert sind. Artikel?</b></div><div class="answer">Art. 15 DSGVO.</div></div>
+      <div class="card flash" data-key="art 17 löschung vergessen"><div class="question"><b>Kunde verlangt Löschung. Artikel?</b></div><div class="answer">Art. 17 DSGVO.</div></div>
+      <div class="card flash" data-key="art 20 datenübertragbarkeit"><div class="question"><b>Kunde will Daten in gängigem Format mitnehmen. Artikel?</b></div><div class="answer">Art. 20 DSGVO.</div></div>
+      <div class="card flash" data-key="zutrittskontrolle raum"><div class="question"><b>Unbekannter betritt Rechenzentrum. Gebot?</b></div><div class="answer">Zutrittskontrolle.</div></div>
+      <div class="card flash" data-key="zugangskontrolle pc konto"><div class="question"><b>Mitarbeiter nutzt PC eines Kollegen. Gebot?</b></div><div class="answer">Zugangskontrolle.</div></div>
+      <div class="card flash" data-key="zugriffskontrolle personalakten"><div class="question"><b>Azubi kann Personalakten sehen. Gebot?</b></div><div class="answer">Zugriffskontrolle.</div></div>
+      <div class="card flash" data-key="eingabekontrolle logs"><div class="question"><b>Nicht nachvollziehbar, wer Daten änderte. Gebot?</b></div><div class="answer">Eingabekontrolle.</div></div>
+      <div class="card flash" data-key="orP schulung rechte"><div class="question"><b>Schulung/Rechte/Zuständigkeiten. BSI-Baustein?</b></div><div class="answer">ORP.</div></div>
+      <div class="card flash" data-key="app software office"><div class="question"><b>Office/Webshop/Ticketsoftware. BSI-Baustein?</b></div><div class="answer">APP.</div></div>
+      <div class="card flash" data-key="net vpn firewall"><div class="question"><b>VPN/Firewall/Router/Switch. BSI-Baustein?</b></div><div class="answer">NET.</div></div>
+      <div class="card flash" data-key="inf serverraum gebäude"><div class="question"><b>Serverraum, Brandschutz, Zutritt. BSI-Baustein?</b></div><div class="answer">INF.</div></div>
+    </div>
+  </section>
+
+  <div class="card"><h2>Wechseln</h2><p>Zur ausführlichen Original-Website wechseln.</p><div class="switch-links"><a class="switch-btn primary" href="../index.html">Zur Original-Website</a><a class="switch-btn" href="index.html">Cheatsheet</a></div></div>
+  <div class="footer">Lern-Cheatsheet für IT/STD Datenschutz & Grundschutz · Statisch, offline nutzbar, subdomain-ready.</div>
+</main>
+
+<div class="printbar"><button onclick="window.print()">Drucken / PDF</button></div>
+<script>
+  document.querySelectorAll('.flash').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
+  const search=document.getElementById('search');
+  search?.addEventListener('input',()=>{const q=search.value.toLowerCase().trim();document.querySelectorAll('#cards .flash').forEach(c=>{c.classList.toggle('hidden',q && !c.textContent.toLowerCase().includes(q) && !c.dataset.key.toLowerCase().includes(q));});});
+</script>
+</body>
+</html>
