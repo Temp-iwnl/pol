@@ -45,8 +45,9 @@
     .house-side-notes{display:grid;gap:10px}
     .note-pill{padding:12px 14px;border-radius:16px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--text)}
     .note-pill b{color:#fff}
-    .embed-frame{width:100%;min-height:760px;border:1px solid var(--line);border-radius:22px;background:#0f1117;box-shadow:var(--shadow);margin-top:16px}
-    @media(max-width:980px){.bsi-house-wrap{grid-template-columns:1fr}.bsi-roof-label{font-size:18px;top:48px}.house-level-title{position:static;display:block;margin:0 0 10px;font-size:18px}.bsi-house{padding-top:78px}.embed-frame{min-height:650px}}
+    .embed-frame{width:100%;min-height:760px;border:1px solid var(--line);border-radius:22px;background:#0f1117;box-shadow:var(--shadow)}
+    .cheat-mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+    @media(max-width:980px){.bsi-house-wrap,.cheat-mini-grid{grid-template-columns:1fr}.bsi-roof-label{font-size:18px;top:48px}.house-level-title{position:static;display:block;margin:0 0 10px;font-size:18px}.bsi-house{padding-top:78px}.embed-frame{min-height:650px}}
     @media print{.switch-links,.embed-frame{display:none!important}.house-card,.note-pill{background:white!important}.bsi-roof-outer{border-color:#7aa4d6}.bsi-roof-inner{border-color:#315d95}.house-shell{border-color:#8ba8ca}.house-level-title{color:#333}}
 
   </style>
@@ -58,14 +59,14 @@
     <div class="brand"><div class="logo">A+</div><div><h1>IT Datenschutz<br>Grundschutz</h1><p>Klausur morgen · Maximal einfach</p></div></div>
     <input class="search" id="search" placeholder="Suche: Art. 32, DSB, Strukturanalyse…" />
     <nav class="nav" id="nav">
-      <a href="#focus">0. Prüfungsfokus</a><a href="#cheatsheet">1.5 Cheatsheet</a><a href="#basics">1. Basics</a><a href="#dsgvo">2. DSGVO Artikel</a><a href="#rights">3. Betroffenenrechte</a><a href="#cia">4. IT-Schutzziele</a><a href="#dsb">5. Datenschutzbeauftragter</a><a href="#access">6. Zugriffsschutz</a><a href="#bsi">7. BSI Grundschutz</a><a href="#bsihaus">7.5 BSI-Hausgrafik</a><a href="#struktur">8. Strukturanalyse</a><a href="#cases">9. Fälle lösen</a><a href="#quiz">10. Quiz & Flashcards</a>
+      <a href="#focus">0. Prüfungsfokus</a><a href="#sample">0.5 Alt-Klausur Muster</a><a href="#cheatsheet">1.5 Cheatsheet</a><a href="#basics">1. Basics</a><a href="#dsgvo">2. DSGVO Artikel</a><a href="#rights">3. Betroffenenrechte</a><a href="#cia">4. IT-Schutzziele</a><a href="#dsb">5. Datenschutzbeauftragter</a><a href="#access">6. Zugriffsschutz</a><a href="#bsi">7. BSI Grundschutz</a><a href="#bsihaus">7.5 BSI-Hausgrafik</a><a href="#struktur">8. Strukturanalyse</a><a href="#cases">9. Fälle lösen</a><a href="#quiz">10. Quiz & Flashcards</a>
     </nav>
   </aside>
   <main class="main">
     <section class="hero searchable">
       <span class="eyebrow">🚀 A-Klausurmodus</span>
       <h2>Datenschutz, DSGVO & BSI Grundschutz — alles auf einer Website.</h2>
-      <p>Die Seite ist auf deine hochgeladenen Unterlagen aufgebaut: Klausurhinweise, DSGVO/BDSG, IT-Schutzziele, Datenschutzbeauftragter, Zugriffsschutz, BSI-Grundschutz, Strukturanalyse und die 8 Gebote des Datenschutzes.</p>
+      <p>Die Seite ist auf deine hochgeladenen Unterlagen aufgebaut: Klausurhinweise, DSGVO/BDSG, IT-Schutzziele, Datenschutzbeauftragter, Zugriffsschutz, BSI-Grundschutz, Strukturanalyse.</p>
       <div class="hero-grid">
         <div class="stat"><b>5</b><span>Strukturanalyse-Objekte</span></div>
         <div class="stat"><b>3</b><span>IT-Schutzziele</span></div>
@@ -82,52 +83,10 @@
     <section id="focus" class="section searchable">
       <h2>0. Was morgen wirklich drankommt</h2>
       <div class="cards two">
-        <div class="card note"><h3>Prüfungsfokus aus deinen Hinweisen</h3><p><b>Lernen musst du:</b> BDSG/DSGVO Artikel an Fallbeispielen, die drei IT-Schutzziele, Aufgaben des Datenschutzbeauftragten, BSI-Grundschutz, Strukturanalyse nach BSI-Objekten. Für Nachschreiber kommen die 8 Gebote dazu.</p><div class="source">Quelle: Hinweise zur Klassenarbeit.txt</div></div>
+        <div class="card note"><h3>Prüfungsfokus aus deinen Hinweisen</h3><p><b>Lernen musst du:</b> BDSG/DSGVO Artikel an Fallbeispielen, die drei IT-Schutzziele, Aufgaben des Datenschutzbeauftragten, BSI-Grundschutz, Strukturanalyse nach BSI-Objekten.</p><div class="source">Quelle: Hinweise zur Klassenarbeit.txt</div></div>
         <div class="card ok"><h3>Die sichere A-Antwort</h3><p>Immer in dieser Reihenfolge antworten: <b>1. Begriff/Artikel nennen → 2. kurz erklären → 3. auf Fall beziehen → 4. passende Maßnahme nennen.</b></p><p class="mini">Beispiel: „Verletzt ist Art. 32 DSGVO, weil der Server unverschlüsselt ist. Maßnahme: Verschlüsselung, Rollenrechte, Zugriffskontrolle.“</p></div>
       </div>
     </section>
-
-    <section id="cheatsheet" class="section searchable">
-      <h2>1.5 Kompakt-Cheatsheet direkt in der Original-Website</h2>
-      <p>Die schnelle Spicker-Version ohne Lernplan und ohne 8-Gebote-Block: nur die Sachen, die du in Fallaufgaben schnell erkennen und formulieren musst.</p>
-      <div class="cards">
-        <div class="card blue">
-          <h3>IT-Schutzziele</h3>
-          <p><b>Vertraulichkeit:</b> Nur Berechtigte sehen Daten.</p>
-          <p><b>Integrität:</b> Daten bleiben richtig und unverändert.</p>
-          <p><b>Verfügbarkeit:</b> Systeme/Daten sind erreichbar und nutzbar.</p>
-        </div>
-        <div class="card note">
-          <h3>DSGVO Artikel</h3>
-          <p><b>Art. 5</b> Grundsätze · <b>Art. 6</b> Rechtsgrundlage · <b>Art. 7</b> Einwilligung · <b>Art. 10</b> Straftaten · <b>Art. 13</b> Information · <b>Art. 15</b> Auskunft · <b>Art. 17</b> Löschung · <b>Art. 18</b> Einschränkung · <b>Art. 20</b> Übertragbarkeit · <b>Art. 32</b> Sicherheit.</p>
-        </div>
-        <div class="card ok">
-          <h3>Strukturanalyse</h3>
-          <p><b>5 Objekte:</b> Geschäftsprozess/Informationen, Anwendung, IT-System, Netz/Verbindung, Raum/Infrastruktur.</p>
-          <p><b>Leitfrage:</b> Was wird gemacht? Welche Software? Welche Geräte? Wie verbunden? Wo steht es?</p>
-        </div>
-      </div>
-      <div class="table-wrap" style="margin-top:16px"><table><thead><tr><th>Thema</th><th>Merksatz</th><th>Klausur-Signal</th></tr></thead><tbody>
-        <tr><td>Art. 32 DSGVO</td><td>Sicherheit der Verarbeitung durch technische und organisatorische Maßnahmen.</td><td>unverschlüsselt, ungesichertes WLAN, Datenleck, kein Backup, jeder Zugriff möglich.</td></tr>
-        <tr><td>Datenschutzbeauftragter</td><td>Berät, überwacht, schult und ist Kontakt zur Aufsichtsbehörde.</td><td>Fall fragt, ob DSB nötig ist oder welche Aufgaben er hat.</td></tr>
-        <tr><td>BSI Grundschutz</td><td>Informationssicherheit systematisch planen, umsetzen, prüfen, verbessern.</td><td>PDCA, Sicherheitsprozess, Bausteine, Strukturanalyse.</td></tr>
-        <tr><td>BSI Bausteine</td><td>ISMS, ORP, CON, OPS, APP, SYS, IND, NET, INF, DER.</td><td>Software = APP, Geräte = SYS, Netzwerk = NET, Raum = INF, Schulung/Rechte = ORP.</td></tr>
-        <tr><td>Gefährdung + Maßnahme</td><td>Gefahr nennen, Klasse bestimmen, technische/bauliche/organisatorische Maßnahme geben.</td><td>Blitz = höhere Gewalt, Phishing = menschliches Fehlverhalten, Hacker = vorsätzliche Handlung.</td></tr>
-      </tbody></table></div>
-      <div class="cards two" style="margin-top:16px">
-        <div class="card purple">
-          <h3>Antworttemplate</h3>
-          <div class="answerbox">Verletzt ist <b>____</b>, weil <b>____</b>. Passend ist Art. <b>__ DSGVO</b> / der BSI-Baustein <b>____</b>. Als Maßnahme eignet sich <b>____</b>, weil dadurch <b>____</b> verhindert wird.</div>
-        </div>
-        <div class="card">
-          <h3>Vollständiges Cheatsheet eingebettet</h3>
-          <p>Die separate Cheatsheet-Seite ist hier eingebettet und liegt im Projektordner unter <b>/cheatsheet/index.html</b>.</p>
-          <div class="switch-links"><a class="switch-btn primary" href="cheatsheet/index.html">Cheatsheet öffnen</a><a class="switch-btn" href="#top">Zurück nach oben</a></div>
-        </div>
-      </div>
-      <iframe class="embed-frame" src="cheatsheet/index.html" title="Eingebettetes Datenschutz-Cheatsheet"></iframe>
-    </section>
-
 
     <section id="basics" class="section searchable">
       <h2>1. Basics: Datenschutz vs. Datensicherheit</h2>
@@ -172,6 +131,7 @@
           <p>Unverschlüsselte Server, ungesichertes WLAN, kein Backup, kein Zugriffsschutz, Datenleck, Serverausfall, fehlende Vertraulichkeit/Integrität/Verfügbarkeit.</p>
         </div>
       </div>
+
     </section>
 
     <section id="rights" class="section searchable">
@@ -262,13 +222,19 @@
             <div class="house-shell">
               <div class="house-level process">
                 <div class="house-level-title">Prozess-Bausteine</div>
-                <div class="chip-row"><span class="bsi-chip">ORP</span><span class="bsi-chip">CON</span><span class="bsi-chip">OPS</span></div>
+                <div class="chip-row">
+                  <span class="bsi-chip">ORP</span><span class="bsi-chip">CON</span><span class="bsi-chip">OPS</span>
+                </div>
               </div>
               <div class="house-level system">
                 <div class="house-level-title">System-Bausteine</div>
-                <div class="chip-row"><span class="bsi-chip">APP</span><span class="bsi-chip">SYS</span><span class="bsi-chip">IND</span><span class="bsi-chip">NET</span><span class="bsi-chip">INF</span></div>
+                <div class="chip-row">
+                  <span class="bsi-chip">APP</span><span class="bsi-chip">SYS</span><span class="bsi-chip">IND</span><span class="bsi-chip">NET</span><span class="bsi-chip">INF</span>
+                </div>
               </div>
-              <div class="house-level der"><div class="chip-row"><span class="bsi-chip dark">DER</span></div></div>
+              <div class="house-level der">
+                <div class="chip-row"><span class="bsi-chip dark">DER</span></div>
+              </div>
             </div>
           </div>
           <div class="house-side-notes">
@@ -328,9 +294,13 @@
       </div>
       <div class="quiz-card" style="margin-top:16px"><h3>Szenario-Trainer</h3><p id="scenarioText"></p><div class="answerbox hidden" id="scenarioAnswer"></div><div class="btns"><button class="btn secondary" onclick="showScenarioAnswer()">Lösung zeigen</button><button class="btn" onclick="nextScenario()">Nächstes Szenario</button></div></div>
     </section>
+
     <section class="footer searchable">
       <p>Erstellt als offline nutzbare Lernwebsite aus deinen hochgeladenen Unterrichtsunterlagen. Tipp: Im Browser mit <span class="kbd">Strg</span> + <span class="kbd">F</span> zusätzlich suchen oder die Seite als PDF drucken.</p>
-      <div class="switch-links"><a class="switch-btn primary" href="index.html">Original-Website</a><a class="switch-btn" href="cheatsheet/index.html">Cheatsheet</a></div>
+      <div class="switch-links">
+        <a class="switch-btn primary" href="index.html">Original-Website</a>
+        <a class="switch-btn" href="cheatsheet/index.html">Cheatsheet</a>
+      </div>
     </section>
 </main>
 </div>
@@ -365,8 +335,7 @@ const flash=[
  ['Vertraulichkeit','Nur Berechtigte dürfen Daten sehen.'],
  ['Integrität','Daten bleiben korrekt und unverändert.'],
  ['Verfügbarkeit','Systeme/Daten sind erreichbar und nutzbar.'],
- ['5 Strukturanalyse-Objekte','Prozess/Info, Anwendung, IT-System, Netz/Verbindung, Raum.'],
- ['8 Gebote Merkkette','Tür, Login, Rechte, Senden, Log, Dienstleister, Backup, Zwecktrennung.']
+ ['5 Strukturanalyse-Objekte','Prozess/Info, Anwendung, IT-System, Netz/Verbindung, Raum.']
 ];
 let fi=0,showing=false;function updateFlash(){showing=false;document.getElementById('flashQ').textContent='Frage: '+flash[fi%flash.length][0];document.getElementById('flashcard').textContent='Was bedeutet: '+flash[fi%flash.length][0]+'?'}function showAnswer(){showing=true;document.getElementById('flashcard').textContent=flash[fi%flash.length][1]}function nextFlash(){fi++;updateFlash()}updateFlash();
 const scenarios=[
